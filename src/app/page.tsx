@@ -1,6 +1,15 @@
+'use client';
 import Image from "next/image";
+import toast from "react-hot-toast";
 
 export default function Home() {
+
+    const handleClick = () => {
+    toast.success('Successfully done!');
+    toast.error('Something went wrong!');
+    toast('Hello from React Hot Toast!'); // default style
+  };
+
   return (
     <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-white">
       <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
@@ -12,6 +21,10 @@ export default function Home() {
           height={20}
           priority
         />
+
+         <button onClick={handleClick} className="px-4 py-2 bg-blue-500 text-white rounded">
+              Show Toast
+            </button>
         <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
           <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
             To get started, edit the page.tsx file.
@@ -41,13 +54,7 @@ export default function Home() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
+           
             Deploy Now
           </a>
           <a
